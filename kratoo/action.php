@@ -59,6 +59,19 @@
                 echo "<hr>";
             }
         }
-        print "<button onclick=\"history.back()\">back</button>";
+        print "<form action=\"comment.php\" Method=\"POST\">";
+        print "แสดงความคิดเห็นของคุณ<br>";
+        print "คอมเม้น : <textarea rows=\"2\" cols=\"25\" name=\"comment\"></textarea><br><br>";
+        print "โพสต์โดย : <input type=\"text\" name=\"by\"><br><br>";
+        print "<button type=\"submit\" name=\"post\" value=\"{$see}\">post</button>";
+        print "<button onclick=\"history.back()\" name=\"back\">back</button><hr>";
+        print "</form>";
+
+        if(file_exists("./kratoo/comment/kratoo{$see}_comment.txt")){
+            $fs = fopen("./kratoo/comment/kratoo{$see}_comment.txt","r");
+            $e = fpassthru($fs);
+        }
+        
+
     }
 ?>

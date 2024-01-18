@@ -16,7 +16,6 @@
         $fs = fopen("numberofkratoo.txt", "r");
         $count = fgets($fs, 255);
         for ($i = 1; $i <= $count; $i++) {
-            // $fs2 = fopen("./kratoo/kratoo{$i}.txt", "r");
             if(file_exists("./kratoo/kratoo{$i}.txt")){
                 $lines=file("./kratoo/kratoo{$i}.txt");
                 $last=sizeof($lines);
